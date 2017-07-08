@@ -54,22 +54,37 @@ body{
   overflow-x: hidden;
 }
 
+.mini-submenu{
+  display:none;  
+  background-color: rgba(0, 0, 0, 0);  
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  border-radius: 4px;
+  padding: 9px;  
+  /*position: relative;*/
+  width: 42px;
 
-
-#wrapper {
-    padding-left: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
 }
 
-#wrapper.toggled {
-    padding-left: 250px;
+.mini-submenu:hover{
+  cursor: pointer;
 }
 
+.mini-submenu .icon-bar {
+  border-radius: 1px;
+  display: block;
+  height: 2px;
+  width: 22px;
+  margin-top: 3px;
+}
 
+.mini-submenu .icon-bar {
+  background-color: #000;
+}
 
-
-
-
+#slide-submenu{
+  height: 40px;
+  display: inline-block;
+  padding: 0 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}

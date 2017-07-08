@@ -1,46 +1,43 @@
+$(function(){
+
+	$('#slide-submenu').on('click',function() {			        
+        $(this).closest('.list-group').fadeOut('slide',function(){
+        	$('.mini-submenu').fadeIn();	
+        });
+        
+      });
+
+	$('.mini-submenu').on('click',function(){		
+        $(this).next('.list-group').toggle('slide');
+        $('.mini-submenu').hide();
+	})
+})
+
+
 $(document).ready(function($){
 	$.ajax({
-		url: "http://pokeapi.co/api/v2/pokemon/",
-		type: "GET",
-		dataType: "JSON",
-		data: ("limit": "100"),
+		url: 'http://pokeapi.co/api/v2/pokemon',
+		type: 'GET',
+		dataType: 'JSON',
+		data: {"limit": '20'},
 	})
-	.done(finction(respuesta){
+
+	.done(function(respuesta){
 		console.log(respuesta);
-		console.log("success");
+		pokemon("resultado");
 	})
+
 	.fail(function(){
 		console.log("error");
 	})
+
 	.always(function(){
 		console.log("complete");
 	});
+
+	var pokemon = function(datos){
+		
+	}
 });
 
 
-
-'use strict';
-
-$(function(){
-  //If the overlay is clicked, then we close the menu bars.
-  $('.overlay').on('click', function(){
-    $(this).fadeOut(300);
-    $('.menu-bar').removeClass('is-active');
-    $('.menu-button').removeClass('is-clicked');
-  });
-  
-  $('.menu-button').on('click', function(){
-    var side = $(this).data('menu');
-    //If this has is-clicked, then we close the menu.
-    if($(this).hasClass('is-clicked')){
-      //Since we created the code for overlay already.
-      $('.overlay').click();
-    }
-    //Otherwise, we open it.
-    else{
-      $('.overlay').fadeIn(300);
-      $(this).addClass('is-clicked');
-      $('.menu-bar.'+side).addClass('is-active');
-    }
-  });
-});
