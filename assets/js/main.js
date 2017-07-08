@@ -27,6 +27,13 @@ $(document).ready(function($){
 		pokemon("resultado");
 	})
 
+	/*.done(function(res) {
+        console.log("success");
+        for (var i = 1; i < 20; i++) {
+        var pokePic = $("<div class= '.col-lg-3 .col-md-3 .col-s-3 .col-xs-3'> <img src=http://pokeapi.co/media/img/" + i + ".png id=" + i + "></div>");
+            $("div.pokemon").append(pokePic);
+        }*/
+
 	.fail(function(){
 		console.log("error");
 	})
