@@ -36,7 +36,12 @@ $(document).ready(function($){
 	});
 
 	var pokemon = function(datos){
-		
+		var detalles = "";
+		datos.forEach(function(elementos, img){
+			var nombre = elementos.nombre;
+			var img = img + 1;
+			var detalles = 'http://pokeapi.co/api/v2/pokemon';
+		})
 	}
 });
 
